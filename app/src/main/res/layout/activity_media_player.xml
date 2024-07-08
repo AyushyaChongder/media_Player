@@ -1,21 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MediaPlayerActivity"
     android:background="@color/black"
-    >
+    tools:context=".MediaPlayerActivity">
 
     <androidx.media3.ui.PlayerView
         android:id="@+id/mediaPlayer"
         android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerInParent="false"
+        app:use_controller="false" />
+
+    <ImageView
+        android:id="@+id/fullscreenButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_centerInParent="true"
-        />
+        android:layout_alignBottom="@id/mediaPlayer"
+        android:layout_alignEnd="@id/mediaPlayer"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_fullscreen_enter"
+        android:elevation="3dp"
+        android:translationZ="12dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="@id/mediaPlayer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/rewindButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rewind" />
+
+        <ImageView
+            android:id="@+id/playPauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_play" />
+
+        <ImageView
+            android:id="@+id/forwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_fast_forward" />
+
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mediaPlayer"
+        android:progressDrawable="@android:drawable/progress_horizontal"
+        android:progressTint="#BC0000"
+        android:thumb="@drawable/seekbar_thumb" />
+
+    <LinearLayout
+        android:id="@+id/topControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/qualityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_quality"
+            />
+
+        <ImageView
+            android:id="@+id/volumeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_volume_on"
+            android:layout_marginStart="16dp"
+           />
+
+    </LinearLayout>
 
 
 </RelativeLayout>

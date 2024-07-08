@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/quality_auto"
+        android:title="Auto" />
+    <item
+        android:id="@+id/quality_low"
+        android:title="Low (240p)" />
+    <item
+        android:id="@+id/quality_medium"
+        android:title="Medium (480p)" />
+    <item
+        android:id="@+id/quality_high"
+        android:title="High (720p)" />
+</menu>
